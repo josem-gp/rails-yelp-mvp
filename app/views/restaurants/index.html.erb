@@ -1,9 +1,27 @@
-<h1>Restaurant List</h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= image_path "hotel.jpg" %>);">
+  <div class="container">
+    <h1>Restaurant List</h1>
+    <p>Change your life and relax at one of our hotels around the world.</p>
+    <a class="btn-flat" href="#">Reserve now</a>
+  </div>
+</div>
 
-<% @restaurants.each do |restaurant| %>
-<h3> <%= link_to restaurant.name, restaurant_path(restaurant) %></h3>
-<p><%= restaurant.address %></p>
-<p><%= restaurant.category %></p>
-<% end %>
+<div class="container">
 
-<%= link_to 'Add a restaurant', new_restaurant_path %>
+  <% @restaurants.each do |restaurant| %>
+    <div class="card-product">
+      <%= image_tag "https://source.unsplash.com/200x200/?hotel" %>
+      <div class="card-product-infos">
+        <h2> <%= link_to restaurant.name, restaurant_path(restaurant) %></h2>
+        <p><%= restaurant.address %></p>
+        <p><%= restaurant.category %></p>
+      </div>
+    </div>
+  <% end %>
+  <div class = btn-ghost>
+    <%= link_to 'Add a restaurant', new_restaurant_path %>
+  </div>
+</div>
+
+
+
